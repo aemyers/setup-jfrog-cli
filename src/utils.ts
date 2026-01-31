@@ -247,6 +247,7 @@ export class Utils {
      */
     private static getServerIdForConfig(): string {
         let serverId: string = Utils.getCustomOrDefaultServerId();
+        core.setOutput('server-id', serverId);
 
         // Add new serverId to the servers env var if it doesn't already exist.
         if (Utils.getConfiguredJFrogServers().includes(serverId)) {
